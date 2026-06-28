@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI SOC Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="AI SOC Dashboard home">
+        <span class="brand-mark">AI</span>
+        <span>AI SOC</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="dashboard.html">Security Report</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="page-title">
+      <div>
+        <p class="eyebrow">Artificial Intelligence Security Operations Center</p>
+        <h1>Security Monitoring Dashboard</h1>
+      </div>
+      <span class="live-badge">Live Sample Mode</span>
+    </section>
+
+    <section class="metric-grid" aria-label="SOC summary metrics">
+      <article class="metric-card">
+        <p>Total Alerts</p>
+        <strong id="totalAlerts">0</strong>
+        <span>Across all monitored assets</span>
+      </article>
+      <article class="metric-card critical">
+        <p>Critical Alerts</p>
+        <strong id="criticalAlerts">0</strong>
+        <span>Needs immediate triage</span>
+      </article>
+      <article class="metric-card safe">
+        <p>Safe Systems</p>
+        <strong id="safeSystems">0</strong>
+        <span>No active alerts detected</span>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Log Upload</p>
+            <h2>AI Log Analysis</h2>
+          </div>
+          <button class="ghost-button" id="loadSampleLogs" type="button">Load Sample Logs</button>
+        </div>
+
+        <label class="upload-box" for="logFile">
+          <span>Upload CSV or TXT log file</span>
+          <small>Detects failed logins and suspicious activity from sample or uploaded logs.</small>
+          <input id="logFile" type="file" accept=".csv,.txt">
+        </label>
+
+        <textarea id="logInput" rows="8" aria-label="Security logs input">2026-06-28 09:15:22,auth,server-01,failed login for admin from 198.51.100.23
+2026-06-28 09:20:11,network,firewall-02,suspicious outbound connection to unknown domain
+2026-06-28 09:28:04,endpoint,laptop-18,user login successful
+2026-06-28 09:33:41,auth,server-04,multiple failed login attempts for root
+2026-06-28 09:42:10,ids,gateway-01,malware signature blocked</textarea>
+
+        <button class="primary-button" id="analyzeLogs" type="button">Analyze Logs</button>
+
+        <div class="analysis-results" id="analysisResults" aria-live="polite"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Threat Detection</p>
+            <h2>Severity Queue</h2>
+          </div>
+        </div>
+        <div class="severity-list" id="threatList"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Alert Management</p>
+          <h2>Open and Resolved Alerts</h2>
+        </div>
+        <div class="filter-group" aria-label="Alert status filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="Open">Open</button>
+          <button class="filter-button" type="button" data-filter="Resolved">Resolved</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Alert</th>
+              <th>Severity</th>
+              <th>System</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="alertsTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

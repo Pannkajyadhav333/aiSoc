@@ -1,0 +1,8 @@
+timestamp,source,system,message
+2026-06-28 09:15:22,auth,server-01,failed login for admin from 198.51.100.23
+2026-06-28 09:20:11,network,firewall-02,suspicious outbound connection to unknown domain
+2026-06-28 09:28:04,endpoint,laptop-18,user login successful
+2026-06-28 09:33:41,auth,server-04,multiple failed login attempts for root
+2026-06-28 09:42:10,ids,gateway-01,malware signature blocked
+2026-06-28 10:05:32,scanner,scanner-03,routine vulnerability scan completed
+2026-06-28 10:20:14,monitor,database-02,safe heartbeat received

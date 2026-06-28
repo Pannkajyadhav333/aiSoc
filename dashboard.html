@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Report | AI SOC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="AI SOC Dashboard home">
+        <span class="brand-mark">AI</span>
+        <span>AI SOC</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="dashboard.html" class="active">Security Report</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="page-title">
+      <div>
+        <p class="eyebrow">Security Report</p>
+        <h1>Daily SOC Summary</h1>
+      </div>
+      <button class="primary-button" id="downloadReport" type="button">Download CSV</button>
+    </section>
+
+    <section class="metric-grid" aria-label="Report metrics">
+      <article class="metric-card">
+        <p>Total Alerts</p>
+        <strong id="reportTotal">0</strong>
+        <span>Generated from sample alert data</span>
+      </article>
+      <article class="metric-card critical">
+        <p>Critical Alerts</p>
+        <strong id="reportCritical">0</strong>
+        <span>High severity events</span>
+      </article>
+      <article class="metric-card safe">
+        <p>Resolved Alerts</p>
+        <strong id="reportResolved">0</strong>
+        <span>Closed by SOC workflow</span>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Export Preview</p>
+          <h2>Security Report Data</h2>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Alert</th>
+              <th>Severity</th>
+              <th>System</th>
+              <th>Status</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="reportTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

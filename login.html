@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI SOC Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+  <main class="login-shell">
+    <section class="login-card" aria-label="AI SOC login">
+      <div class="login-brand">
+        <span class="login-logo">AI</span>
+        <div>
+          <p class="eyebrow">Artificial Intelligence SOC</p>
+          <h1>Secure Console Login</h1>
+        </div>
+      </div>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="field-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" placeholder="Enter username">
+        </div>
+
+        <div class="field-group">
+          <label for="password">Password</label>
+          <div class="password-control">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter password">
+            <button id="togglePassword" type="button" aria-label="Show password">Show</button>
+          </div>
+        </div>
+
+        <div class="login-options">
+          <label class="remember-option">
+            <input id="rememberMe" type="checkbox">
+            <span>Remember Me</span>
+          </label>
+          <a href="#" aria-label="Forgot password link">Forgot Password?</a>
+        </div>
+
+        <p id="loginMessage" class="login-message" aria-live="polite"></p>
+
+        <button class="login-button" type="submit">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
